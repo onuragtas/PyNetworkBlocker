@@ -33,7 +33,7 @@ class MainDialog(QtWidgets.QDialog, Ui_gui.Ui_Dialog, interfaces.Interfaces):
             while True:
                 for d in self.devices:
                     self.arp=scapy.all.ARP(op=1,psrc=self.sp,pdst=d,hwdst=self.mac)
-                    # self.log.append(self.sp+" "+d+" "+self.mac)
+                    print(self.sp, d, self.mac)
                     # self.log.moveCursor(QtGui.QTextCursor.End)
                     send(self.arp)
                 
