@@ -25,6 +25,7 @@ class MainDialog(QtWidgets.QDialog, Ui_gui.Ui_Dialog, interfaces.Interfaces):
         self.stop.clicked.connect(self.stopAction)
     
     def stopAction(self):
+        self.status.setText("Status: Stoped")
         self.online = 0
 
     def send(self):
@@ -32,13 +33,15 @@ class MainDialog(QtWidgets.QDialog, Ui_gui.Ui_Dialog, interfaces.Interfaces):
             while True:
                 for d in self.devices:
                     self.arp=scapy.all.ARP(op=1,psrc=self.sp,pdst=d,hwdst=self.mac)
-                    print self.sp, d, self.mac
+                    # self.log.append(self.sp+" "+d+" "+self.mac)
+                    # self.log.moveCursor(QtGui.QTextCursor.End)
                     send(self.arp)
                 
                 if self.online == 0:
                     break
 
     def sendArp(self):
+        self.status.setText("Status: Started - Working")
         self.online = 1
         for device in self.devicesList.selectedItems():
             self.devices.append(device.text())
@@ -67,6 +70,7 @@ class MainDialog(QtWidgets.QDialog, Ui_gui.Ui_Dialog, interfaces.Interfaces):
         thread.start_new_thread(self.getDevieThread, ())
 
     def getIface(self):
+        self.ifaceList.clear()
         self.ifaceList.addItems(self.getInterfaces())
 
 
