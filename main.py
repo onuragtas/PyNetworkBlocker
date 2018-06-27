@@ -43,6 +43,7 @@ class MainDialog(QtWidgets.QDialog, Ui_gui.Ui_Dialog, interfaces.Interfaces):
     def sendArp(self):
         self.status.setText("Status: Started - Working")
         self.online = 1
+        self.devices = []
         for device in self.devicesList.selectedItems():
             self.devices.append(device.text())
         thread.start_new_thread(self.send, ())
