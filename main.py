@@ -43,13 +43,6 @@ class MainDialog(QtWidgets.QDialog, Ui_gui.Ui_Dialog, interfaces.Interfaces):
         for device in self.devicesList.selectedItems():
             self.devices.append(device.text())
         thread.start_new_thread(self.send, ())
-        # for host, status in hosts_list:
-        #     op=1
-        #     spoof=re.findall("('(.+?)',)",str(hosts_list[0][:1]))
-        #     spoof = spoof[0][1]
-            # if host != spoof and host != self.get_lan_ip():
-                # gonder(op, spoof, host, mac).start()
-                # print(op, spoof, host, mac)
 
     def getDevieThread(self):
         iface = self.ifaceList.currentItem().text()
