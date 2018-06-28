@@ -1,0 +1,8 @@
+[Desktop Entry]								
+Name=PyNetworkBlocker									
+Comment=PyNetworkBlocker								
+Categories=Utility;								
+Terminal=false									
+Type=Application								
+Exec=pynetworkblocker									
+GenericName[tr_TR.utf8]=pynetworkblocker
