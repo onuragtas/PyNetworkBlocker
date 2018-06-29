@@ -9,6 +9,7 @@ from scapy.all import *
 import fcntl
 import struct
 import netifaces
+import os
 
 class MainDialog(QtWidgets.QDialog, Ui_gui.Ui_Dialog, interfaces.Interfaces):
     def __init__(self, parent=None):
@@ -17,6 +18,9 @@ class MainDialog(QtWidgets.QDialog, Ui_gui.Ui_Dialog, interfaces.Interfaces):
         self.online = 0
         self.devices = []
         self.mac = ""
+        
+        os.system("sudo apt-get install python-pyqt5")
+
         self.ifaceButton.clicked.connect(self.getIface)
 
         self.devicesButton.clicked.connect(self.getDevices)

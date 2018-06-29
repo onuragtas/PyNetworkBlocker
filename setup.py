@@ -10,7 +10,7 @@ setup(
    author='Onur Ağtaş',
    author_email='agtasonur@gmail.com',
    packages=['pynetworkblocker'],  #same as name
-   install_requires=['scapy', 'python-nmap'], #external packages as dependencies
+   install_requires=['scapy', 'python-nmap','netifaces'], #external packages as dependencies
    scripts=['scripts/pynetworkblocker','pynetworkblocker/pynetworkblocker.py','pynetworkblocker/Ui_gui.py','pynetworkblocker/interfaces.py'],
 #    data_files = [ ("pynetworkblocker",glob.glob('pynetworkblocker/main.py') ),
 #                         ("pynetworkblocker",glob.glob('pynetworkblocker/Ui_gui.py') ),    
